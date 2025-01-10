@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos - Calci-Phos</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styles pour centrer le texte et limiter sa largeur à un tiers de la page */
+    .content-container {
+      max-width: 33.33%;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Styles pour la vidéo YouTube */
+    .video-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .video-container iframe {
+      width: 560px;
+      height: 315px;
+      border: none;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+
+    /* Décaler le contenu principal de 4 lignes */
+    main {
+      margin-top: 80px;
+    }
+
+    /* Styles pour la section blanche sans contour */
+    .white-section {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      max-width: 33.33%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .white-section h3 {
+      font-size: 1.5rem;
+      color: #095019;
+      margin-bottom: 10px;
+    }
+
+    .white-section p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* Styles pour l'icône de langue */
+    .language-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .language-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .language-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .language-dropdown a:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imageslogo.png" alt="Logo Calci-Phos" class="header-logo">
+    <!-- Sélecteur de langue avec icône -->
+    <div class="language-selector" onclick="toggleLanguageDropdown()">
+      <img src="images/langueicone.png" alt="Sélecteur de langue" class="language-icon">
+      <div class="language-dropdown" id="languageDropdown">
+        <a href="#" onclick="changeLanguage('fr')">Français</a>
+        <a href="#" onclick="changeLanguage('en')">English</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-container">
+    <nav>
+      <ul>
+        <!-- Icône Accueil -->
+        <li>
+          <a href="index.html">
+            <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </a>
+        </li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <div class="content-container">
+      <!-- Texte remplacé ici -->
+      <h2>Votre partenaire pour une nutrition animale optimale et de qualité !</h2>
+      <p>
+        CALCI-PHOS est une entreprise spécialisée dans le secteur de la nutrition animale, implantée à Oran depuis 2011. 
+        Nous jouissons d'une solide réputation pour la qualité de nos services en matière de fabrication et de commercialisation 
+        des CMV 0,5 % et 1 %. Ainsi, nous avons acquis une solide expertise dans l'importation du phosphate DCP et MCP, 
+        en travaillant avec des fournisseurs de confiance pour garantir la qualité de nos produits. Nous sommes fiers de 
+        notre capacité à fournir une gamme de produits personnalisés pour répondre aux besoins spécifiques de nos clients.
+      </p>
+      <p>
+        Notre expertise en formulation nous permet de travailler en étroite collaboration avec nos clients pour créer des 
+        solutions nutritionnelles adaptées à leurs animaux et à leurs conditions d'élevage. Nous accordons une grande 
+        importance à la qualité des matières premières utilisées pour la fabrication de nos produits et effectuons des 
+        analyses rigoureuses pour garantir leur qualité.
+      </p>
+      <p>
+        Chez CALCI-PHOS, nous sommes conscients de la nécessité d'un accompagnement et d'un conseil technique de qualité 
+        pour nos clients. Grâce à notre expérience et à notre compétence dans le secteur de la nutrition animale, nous 
+        sommes en mesure de fournir des services de conseil personnalisés pour aider nos clients à faire les choix les 
+        plus adaptés à leurs besoins.
+      </p>
+      <p>
+        En plus de nos services de consultation technique, nous organisons régulièrement des séminaires et des formations 
+        pour partager notre expertise avec nos clients et continuer à améliorer la performance de leur activité de 
+        nutrition animale.
+      </p>
+      <p>
+        Nous sommes convaincus que notre engagement à fournir des produits et des services de qualité, ainsi que notre 
+        expertise en matière de nutrition animale, feront de nous votre partenaire privilégié pour répondre à tous vos 
+        besoins en matière de nutrition animale.
+      </p>
+    </div>
+
+    <!-- Conteneur pour la vidéo YouTube -->
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/3O_bHO_7eAI" 
+        title="YouTube video player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Section blanche sans contour sous la vidéo -->
+    <div class="white-section">
+      <h3>Notre Engagement</h3>
+      <p>
+        <!-- Texte supprimé ici -->
+      </p>
+    </div>
+  </main>
+
+  <!-- Bouton flottant "Contact" -->
+  <button class="floating-contact-button" onclick="window.location.href='contact.html'">Contact</button>
+
+  <footer>
+    <p>&copy; 2023 Calci-Phos. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Fonction pour afficher ou masquer le menu déroulant
+    function toggleLanguageDropdown() {
+      const dropdown = document.getElementById("languageDropdown");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+
+    // Fonction pour changer la langue
+    function changeLanguage(lang) {
+      alert('Langue changée en ' + (lang === 'fr' ? 'Français' : 'English'));
+      document.getElementById("languageDropdown").style.display = "none";
+    }
+
+    // Masquer le menu déroulant si l'utilisateur clique en dehors
+    document.addEventListener("click", function (event) {
+      const dropdown = document.getElementById("languageDropdown");
+      const languageSelector = document.querySelector(".language-selector");
+      if (!languageSelector.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Calci-Phos</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styles pour l'icône de langue */
+    .language-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .language-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .language-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .language-dropdown a:hover {
+      background-color: #f9f9f9;
+    }
+
+    /* Styles pour l'icône d'accueil */
+    .home-icon {
+      width: 24px;
+      height: 24px;
+      fill: #333;
+      transition: fill 0.3s ease;
+      margin-top: -5px;
+    }
+
+    .home-icon:hover {
+      fill: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imageslogo.png" alt="Logo Calci-Phos" class="header-logo">
+    <!-- Sélecteur de langue avec icône -->
+    <div class="language-selector" onclick="toggleLanguageDropdown()">
+      <img src="images/langueicone.png" alt="Sélecteur de langue" class="language-icon">
+      <div class="language-dropdown" id="languageDropdown">
+        <a href="#" onclick="changeLanguage('fr')">Français</a>
+        <a href="#" onclick="changeLanguage('en')">English</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-container">
+    <nav>
+      <ul>
+        <!-- Icône Accueil -->
+        <li>
+          <a href="index.html">
+            <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </a>
+        </li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <h2>Nos services</h2>
+    <p>Découvrez les services que nous proposons.</p>
+  </main>
+
+  <!-- Bouton flottant "Contact" -->
+  <button class="floating-contact-button" onclick="window.location.href='contact.html'">Contact</button>
+
+  <footer>
+    <p>&copy; 2023 Calci-Phos. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Fonction pour afficher ou masquer le menu déroulant
+    function toggleLanguageDropdown() {
+      const dropdown = document.getElementById("languageDropdown");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+
+    // Fonction pour changer la langue
+    function changeLanguage(lang) {
+      alert('Langue changée en ' + (lang === 'fr' ? 'Français' : 'English'));
+      document.getElementById("languageDropdown").style.display = "none";
+    }
+
+    // Masquer le menu déroulant si l'utilisateur clique en dehors
+    document.addEventListener("click", function (event) {
+      const dropdown = document.getElementById("languageDropdown");
+      const languageSelector = document.querySelector(".language-selector");
+      if (!languageSelector.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

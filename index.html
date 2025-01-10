@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Calci-Phos</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styles pour l'icône d'accueil */
+    .home-icon {
+      width: 24px;
+      height: 24px;
+      fill: #333;
+      transition: fill 0.3s ease;
+      margin-top: -5px;
+    }
+
+    .home-icon:hover {
+      fill: #007BFF;
+    }
+
+    /* Styles pour l'icône de langue */
+    .language-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .language-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .language-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .language-dropdown a:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Logo Calci-Phos" class="header-logo">
+    <!-- Sélecteur de langue avec icône -->
+    <div class="language-selector" onclick="toggleLanguageDropdown()">
+      <img src="images/langueicone.png" alt="Sélecteur de langue" class="language-icon">
+      <div class="language-dropdown" id="languageDropdown">
+        <a href="#" onclick="changeLanguage('fr')">Français</a>
+        <a href="#" onclick="changeLanguage('en')">English</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-container">
+    <nav>
+      <ul>
+        <!-- Icône Accueil -->
+        <li>
+          <a href="index.html">
+            <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </a>
+        </li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Section Hero divisée en deux parties -->
+    <section class="hero-section">
+      <!-- Numéro de section supprimé -->
+      <div class="hero-left">
+        <!-- Partie 1 : Texte principal -->
+        <div class="hero-left-part1">
+          <p>Spécialistes en nutrition animale, nous fournissons des solutions de qualité pour répondre aux besoins de vos animaux.</p>
+        </div>
+
+        <!-- Partie 2 : Sous-texte -->
+        <div class="hero-left-part2">
+          <p>Nous visons à offrir des solutions efficaces qui concilient rentabilité, bien-être animal et respect de l’environnement. Calci-phos® vous assure des additifs et des ingrédients alimentaires de haute qualité, adaptés aux exigences actuelles en termes de sécurité et de santé des produits alimentaires.</p>
+
+          <!-- Nouvelle section sous le sous-texte -->
+          <div class="new-section">
+            <div class="animal-links">
+              <a href="#" onclick="showContent('mouton')">
+                <img src="images/MoutonIcone.png" alt="Mouton" class="animal-icon">
+              </a>
+              <a href="#" onclick="showContent('bovins')">
+                <img src="images/bovins-icon.png" alt="Bovins" class="animal-icon">
+              </a>
+              <a href="#" onclick="showContent('poules')">
+                <img src="images/poules-icon.png" alt="Poules" class="animal-icon">
+              </a>
+              <a href="#" onclick="showContent('dindes')">
+                <img src="images/dindes-icon.png" alt="Dindes" class="animal-icon">
+              </a>
+            </div>
+          </div>
+
+          <!-- Section pour afficher le contenu des boutons -->
+          <div id="content-section" class="content-section">
+            <!-- Le contenu sera injecté ici via JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Partie droite avec diaporama -->
+      <div class="hero-right">
+        <div class="slideshow-container">
+          <!-- Images du diaporama -->
+          <div class="mySlides fade">
+            <img src="images/BG-1.jpg" alt="Nutrition animale 1">
+          </div>
+          <div class="mySlides fade">
+            <img src="images/BG-2.jpg" alt="Nutrition animale 2">
+          </div>
+          <div class="mySlides fade">
+            <img src="images/BG-3.jpg" alt="Nutrition animale 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Fonctionnalités -->
+    <section class="features-section">
+      <div class="element-number">2</div>
+      <div class="feature">
+        <img src="images/icon-quality.png" alt="Qualité">
+        <h3>Produits de Haute Qualité</h3>
+        <p>Nous garantissons des produits de qualité supérieure pour la nutrition animale.</p>
+      </div>
+      <div class="feature">
+        <img src="images/icon-innovation.png" alt="Innovation">
+        <h3>Innovation</h3>
+        <p>Nous innovons constamment pour améliorer nos solutions nutritionnelles.</p>
+      </div>
+      <div class="feature">
+        <img src="images/icon-support.png" alt="Support">
+        <h3>Support Technique</h3>
+        <p>Notre équipe est à votre disposition pour un support technique personnalisé.</p>
+      </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section class="about-section">
+      <div class="element-number">3</div>
+      <h2>À propos de nous</h2>
+      <p>
+        Calci-Phos est une entreprise spécialisée dans la fabrication de matières premières pour la nutrition animale. 
+        Depuis 2011, nous nous engageons à fournir des produits de qualité pour répondre aux besoins de nos clients.
+      </p>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact-section">
+      <div class="element-number">4</div>
+      <h2>Contactez-nous</h2>
+      <p>Pour toute question ou demande, n'hésitez pas à nous contacter. Notre équipe est là pour vous aider.</p>
+      <a href="contact.html" class="cta-button">Nous contacter</a>
+    </section>
+  </main>
+
+  <!-- Bouton flottant "Contact" -->
+  <button class="floating-contact-button" onclick="window.location.href='contact.html'">Contact</button>
+
+  <footer>
+    <p>&copy; 2023 Calci-Phos. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Fonction pour afficher ou masquer le menu déroulant
+    function toggleLanguageDropdown() {
+      const dropdown = document.getElementById("languageDropdown");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+
+    // Fonction pour changer la langue
+    function changeLanguage(lang) {
+      alert('Langue changée en ' + (lang === 'fr' ? 'Français' : 'English'));
+      document.getElementById("languageDropdown").style.display = "none";
+    }
+
+    // Masquer le menu déroulant si l'utilisateur clique en dehors
+    document.addEventListener("click", function (event) {
+      const dropdown = document.getElementById("languageDropdown");
+      const languageSelector = document.querySelector(".language-selector");
+      if (!languageSelector.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    // Fonction pour afficher le contenu correspondant au bouton cliqué
+    function showContent(animal) {
+      const contentSection = document.getElementById("content-section");
+      let content = "";
+
+      switch (animal) {
+        case "mouton":
+          content = "Tout ce dont vous avez besoin afin de soigner vos moutons.";
+          break;
+        case "bovins":
+          content = "Nous avons toute une panoplie de produits bovins pour les vaches laitières ou de viande.";
+          break;
+        case "poules":
+          content = "Pondeuses ou poules de chair, nous vous fournirons des produits de qualité afin d’accroître votre rendement.";
+          break;
+        case "dindes":
+          content = "Tout ce dont la dinde a besoin afin de produire une chair de bonne qualité.";
+          break;
+        default:
+          content = "";
+      }
+
+      // Injecter le contenu dans la section
+      contentSection.innerHTML = `<p>${content}</p>`;
+    }
+
+    // Script pour le diaporama avec effet de fade
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+
+      // Masquer toutes les diapositives
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      // Passer à la diapositive suivante
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      // Afficher la diapositive actuelle avec un effet de fade
+      slides[slideIndex - 1].style.display = "block";
+
+      // Changer de diapositive toutes les 10 secondes
+      setTimeout(showSlides, 10000); // 10 secondes
+    }
+  </script>
+</body>
+</html>

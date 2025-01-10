@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Calci-Phos</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Ajouter Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Styles spécifiques pour la page de contact */
+    .contact-layout {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      margin: 80px 10% 0;
+      align-items: stretch;
+    }
+
+    .contact-form-container {
+      flex: 1;
+      max-width: 40%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-notice {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .contact-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-form textarea {
+      height: 100px;
+    }
+
+    .contact-form button {
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      width: 120px;
+    }
+
+    .contact-form button:hover {
+      background-color: #555;
+    }
+
+    .contact-info {
+      flex: 1;
+      max-width: 40%;
+      background-color: #fff;
+      padding: 30px 20px;
+      border-radius: 5px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: none;
+    }
+
+    .info-logo {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .contact-info h3 {
+      margin-top: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.1;
+    }
+
+    .contact-info strong {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .contact-info a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Styles pour les icônes */
+    .contact-info .icon {
+      margin-right: 10px;
+      color: #333;
+    }
+
+    /* Styles pour l'icône de langue */
+    .language-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .language-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .language-dropdown a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .language-dropdown a:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imageslogo.png" alt="Logo Calci-Phos" class="header-logo">
+    <!-- Sélecteur de langue avec icône -->
+    <div class="language-selector" onclick="toggleLanguageDropdown()">
+      <img src="images/langueicone.png" alt="Sélecteur de langue" class="language-icon">
+      <div class="language-dropdown" id="languageDropdown">
+        <a href="#" onclick="changeLanguage('fr')">Français</a>
+        <a href="#" onclick="changeLanguage('en')">English</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-container">
+    <nav>
+      <ul>
+        <!-- Icône Accueil -->
+        <li>
+          <a href="index.html">
+            <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+          </a>
+        </li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <div class="contact-layout">
+      <!-- Formulaire de contact à gauche -->
+      <div class="contact-form-container">
+        <p class="form-notice">Les champs marqués d'un <span class="required">*</span> sont obligatoires.</p>
+        <form class="contact-form" action="send_email.php" method="POST">
+          <label for="nom">Nom <span class="required">*</span></label>
+          <input type="text" id="nom" name="nom" required>
+
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">ENVOYER</button>
+        </form>
+      </div>
+
+      <!-- Informations de contact à droite -->
+      <div class="contact-info">
+        <img src="imageslogo1.png" alt="Logo Calci-Phos" class="info-logo">
+        <h3>AGRICULTURE ET AGROALIMENTAIRE</h3>
+        <p><strong>Fabrication de matières premières destinées à la nutrition animale</strong></p>
+        <p><i class="fas fa-map-marker-alt icon"></i> Local N° 03 Ilot 269 El Braya - Oran - ALGÉRIE</p>
+        <p><i class="fas fa-phone-alt icon"></i> +213 560 69 45 47</p>
+        <p><i class="fas fa-phone-alt icon"></i> +213 560 00 46 09</p>
+        <p><i class="fas fa-envelope icon"></i> <a href="mailto:commercial@calci-phos.com">commercial@calci-phos.com</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Calci-Phos. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Fonction pour afficher ou masquer le menu déroulant
+    function toggleLanguageDropdown() {
+      const dropdown = document.getElementById("languageDropdown");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+
+    // Fonction pour changer la langue
+    function changeLanguage(lang) {
+      alert('Langue changée en ' + (lang === 'fr' ? 'Français' : 'English'));
+      document.getElementById("languageDropdown").style.display = "none";
+    }
+
+    // Masquer le menu déroulant si l'utilisateur clique en dehors
+    document.addEventListener("click", function (event) {
+      const dropdown = document.getElementById("languageDropdown");
+      const languageSelector = document.querySelector(".language-selector");
+      if (!languageSelector.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
